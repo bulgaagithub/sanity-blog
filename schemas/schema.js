@@ -27,6 +27,26 @@ export default createSchema({
           type: "string",
           description: "Постын төрлийг текстээр бичих",
         },
+        {
+          title: "Постын зураг",
+          name: "cover_image",
+          type: "image",
+        },
+        {
+          title: "Огноо",
+          name: "date",
+          type: "datetime",
+        },
+        {
+          title: "Хаяг",
+          name: "slug",
+          type: "slug",
+          options: {
+            source: "title",
+            slugify: (input) =>
+              input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+          },
+        },
       ],
     },
   ]),
