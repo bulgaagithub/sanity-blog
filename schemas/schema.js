@@ -27,7 +27,7 @@ export default createSchema({
               .error("Гарчгийн урт хамгийн багадаа 10 тэмдэгтээс тогтоно"),
             Rule.required()
               .max(80)
-              .warming("Гарчиг богино байх хэрэгтэй (80 тэмдэгтээс хэтрэхгүй)"),
+              .warning("Гарчиг богино байх хэрэгтэй (80 тэмдэгтээс хэтрэхгүй)"),
           ],
         },
         {
@@ -59,7 +59,11 @@ export default createSchema({
           options: {
             source: "title",
             slugify: (input) =>
-              input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
+              input
+                .toLowerCase()
+                .replace(/\s+/g, "-")
+                .slice(0, 200)
+                .substr(0, input.indexOf("?")),
           },
         },
       ],
