@@ -37,6 +37,35 @@ export default createSchema({
           description: "Постын төрлийг текстээр бичих",
         },
         {
+          name: "content",
+          type: "array",
+          title: "Постын агуулга",
+          of: [
+            {
+              type: "block",
+            },
+            {
+              type: "image",
+              fields: [
+                {
+                  title: "Зургийн тайлбарр",
+                  name: "alt",
+                  type: "text",
+                  options: {
+                    isHighlighted: true,
+                  },
+                },
+              ],
+            },
+            {
+              type: "code",
+              options: {
+                withFilename: true,
+              },
+            },
+          ],
+        },
+        {
           title: "Нийтлэлч",
           name: "publisher",
           type: "reference",
@@ -46,6 +75,16 @@ export default createSchema({
           title: "Постын зураг",
           name: "cover_image",
           type: "image",
+          fields: [
+            {
+              title: "Зургийн тайлбарр",
+              name: "alt",
+              type: "text",
+            },
+          ],
+          options: {
+            hotspot: true,
+          },
         },
         {
           title: "Огноо",
