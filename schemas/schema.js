@@ -20,12 +20,27 @@ export default createSchema({
           title: "Постын гарчиг",
           name: "title",
           type: "string",
+          description: "Постын үндсэн гарчиг",
+          validation: (Rule) => [
+            Rule.required()
+              .min(10)
+              .error("Гарчгийн урт хамгийн багадаа 10 тэмдэгтээс тогтоно"),
+            Rule.required()
+              .max(80)
+              .warming("Гарчиг богино байх хэрэгтэй (80 тэмдэгтээс хэтрэхгүй)"),
+          ],
         },
         {
           title: "Дэд гарчиг",
           name: "subtitle",
           type: "string",
           description: "Постын төрлийг текстээр бичих",
+        },
+        {
+          title: "Нийтлэлч",
+          name: "publisher",
+          type: "reference",
+          to: [{ type: "publisher" }],
         },
         {
           title: "Постын зураг",
@@ -46,6 +61,23 @@ export default createSchema({
             slugify: (input) =>
               input.toLowerCase().replace(/\s+/g, "-").slice(0, 200),
           },
+        },
+      ],
+    },
+    {
+      title: "Нийтлэлч",
+      name: "publisher",
+      type: "document",
+      fields: [
+        {
+          title: "Нийтлэлчийн нэр",
+          name: "title",
+          type: "string",
+        },
+        {
+          title: "Нийтлэлчийн зураг",
+          name: "picture",
+          type: "image",
         },
       ],
     },
