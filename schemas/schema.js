@@ -55,7 +55,33 @@ export default createSchema({
                     isHighlighted: true,
                   },
                 },
+                {
+                  title: "Зургийн байрлал",
+                  name: "position",
+                  type: "string",
+                  options: {
+                    isHighlighted: true,
+                    list: [
+                      {
+                        title: "Голлуулах",
+                        value: "center",
+                      },
+                      {
+                        title: "Зүүн",
+                        value: "left",
+                      },
+                      {
+                        title: "Баруун",
+                        value: "right",
+                      },
+                    ],
+                    layout: "radio",
+                  },
+                },
               ],
+              options: {
+                hotspot: true,
+              },
             },
             {
               type: "code",
