@@ -128,7 +128,10 @@ export default createSchema({
                 .toLowerCase()
                 .replace(/\s+/g, "-")
                 .slice(0, 200)
-                .substr(0, input.indexOf("?")),
+                .substr(
+                  0,
+                  input.indexOf("?") !== -1 ? input.indexOf("?") : input.length
+                ),
           },
         },
       ],

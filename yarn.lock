@@ -967,6 +967,11 @@
     get-random-values "^1.2.0"
     lodash "^4.17.15"
 
+"@sanity/cli@^2.7.1":
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/@sanity/cli/-/cli-2.7.1.tgz#40af5d9233fa3e88c75bb5a1baf6264ae85fb760"
+  integrity sha512-4z+YEbO2J92NRuTRZ9F60fZhRSu0lwSzkJmGye9zLaStT7B2RN/58M+dUMilWCCHMKHcrMI4fk0TR8/JPuLtlw==
+
 "@sanity/client@2.2.6":
   version "2.2.6"
   resolved "https://registry.npmjs.org/@sanity/client/-/client-2.2.6.tgz#81588e9a626e26cfecd21409d08a8474ad5210d8"
@@ -1320,6 +1325,10 @@
     lodash "^4.17.15"
     slate "^0.58.4"
     styled-components "^5.0.0"
+
+"@sanity/production-preview@^2.2.6":
+  version "2.2.6"
+  resolved "https://registry.npmjs.org/@sanity/production-preview/-/production-preview-2.2.6.tgz#3c92cf26d4b7c66ebd69cd80c94be09519aa9231"
 
 "@sanity/react-hooks@2.6.0":
   version "2.6.0"
